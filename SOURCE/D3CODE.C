@@ -1,4 +1,8 @@
+#ifdef MINIWIN
+#include "miniwin/windows.h"
+#else
 #include <windows.h>
+#endif
 #include "rmdemo.h"
 #include "d3code.h"
 

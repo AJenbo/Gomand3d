@@ -82,9 +82,13 @@ extern EbInfo SebInfo[SEB_COUNT];
 
 #pragma warning( disable : 4113)
 
+#ifdef MINIWIN
+#include "miniwin/windows.h"
+#else
 #include <windows.h>
 #include <windowsx.h>
 #include <commctrl.h>
+#endif
 
 
 #include "landscap.h"

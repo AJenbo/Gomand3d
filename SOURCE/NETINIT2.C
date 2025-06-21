@@ -16,9 +16,13 @@
 //
 //**************************************************************************
 
+#ifdef MINIWIN
+#include "miniwin/windows.h"
+#else
 #include <windows.h>
 #include <windowsx.h>
 #include <mmsystem.h>
+#endif
 #include <math.h>
 
 #include "d3dappi.h"

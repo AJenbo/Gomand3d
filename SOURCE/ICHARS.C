@@ -137,15 +137,20 @@ $Log:   H:/pvcs/pvcsproj/gomand3d.prj/ICHARS.C_V  $
 ***********************************************************************/
 #include <stdio.h>
 #include <math.h>
+#ifdef MINIWIN
+#include "miniwin/windows.h"
+#include "miniwin/d3d.h"
+#else
 #include <windows.h>
 #include <windowsx.h>
 #include <commctrl.h>
-
 #include <d3d.h>
+#endif
+
 #include "d3dmacs.h"
 #include "rl2d3d.h"
 #include "mdtex.h"
-#include "BinLoad.h"
+#include "binload.h"
 #include "tekanim.h"
 #include "global.h"
 #include "d3dappi.h"

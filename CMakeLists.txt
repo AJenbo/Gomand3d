@@ -1,7 +1,38 @@
 cmake_minimum_required(VERSION 3.10)
 project(Gomand3d LANGUAGES C CXX)
 
+cmake_policy(SET CMP0072 NEW)
+
 include_directories(${CMAKE_SOURCE_DIR}/INCLUDE)
+
+option(ASAN "Enable address sanitizer" OFF)
+option(UBSAN "Enable undefined behaviour sanitizer" OFF)
+option(DOWNLOAD_DEPENDENCIES "Fetch SDL3 instead of finding it on the system" ON)
+
+if (DOWNLOAD_DEPENDENCIES)
+    message(STATUS "📦 Fetching SDL3...")
+
+    include(FetchContent)
+    FetchContent_Declare(
+        SDL3
+        GIT_REPOSITORY https://github.com/libsdl-org/SDL.git
+        GIT_TAG main
+        EXCLUDE_FROM_ALL
+    )
+    FetchContent_MakeAvailable(SDL3)
+else()
+    find_package(SDL3 CONFIG REQUIRED)
+endif()
+
+if (ASAN)
+  add_compile_options(-fsanitize=address -fno-omit-frame-pointer)
+  add_link_options(-fsanitize=address)
+endif()
+
+if (UBSAN)
+  add_compile_options(-fsanitize=undefined -fno-sanitize-recover=undefined)
+  add_link_options(-fsanitize=undefined)
+endif()
 
 set(SOURCES
     SOURCE/BINLOAD.C
@@ -76,11 +107,15 @@ target_compile_definitions(Gomand3d PRIVATE
     USE320
 )
 
-# For Windows builds
+target_link_libraries(Gomand3d PRIVATE SDL3::SDL3)
+
 if (WIN32)
     target_link_libraries(Gomand3d
         d3drm ddraw dinput dsound dplayx
         user32 gdi32 winmm ole32 oleaut32 version
         comdlg32 shell32 advapi32
     )
+else()
+    add_subdirectory(miniwin EXCLUDE_FROM_ALL)
+    target_link_libraries(Gomand3d PRIVATE miniwin)
 endif()

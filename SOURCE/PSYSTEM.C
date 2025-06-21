@@ -83,7 +83,11 @@ Changes:
 				added #include "loadgif.h"
 
 ***********************************************************************/
+#ifdef MINIWIN
+#include "miniwin/d3drm.h"
+#else
 #include <d3drmwin.h>
+#endif
 #include "mdtex.h"
 #include "spritlib.h"
 #include "psystem.h"

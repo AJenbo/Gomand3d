@@ -134,7 +134,7 @@ LPTEXTURESTRUCT lpTextureStruct[3];
 #include "landscap.h"
 #include "gosys.h"
 #include "d3dappi.h"
-#include "BinLoad.h"
+#include "binload.h"
 
 #pragma warning( disable : 4244)
 
@@ -279,7 +279,11 @@ void GetSpecificBox(int building_num, RLBox *abox)
 
 #include <math.h>
 #include <stdlib.h>
+#ifdef MINIWIN
+#include "miniwin/d3d.h"
+#else
 #include <d3d.h>
+#endif
 #include "d3dmacs.h"
 #include "rmdemo.h"
 #include <stdio.h>

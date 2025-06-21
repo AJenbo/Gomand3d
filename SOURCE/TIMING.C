@@ -38,7 +38,11 @@ Changes:
 #include "rl2d3d.h"
 //#include "rl.h"
 #include <time.h>
+#ifdef MINIWIN
+#include "miniwin/windows.h"
+#else
 #include <windows.h>
+#endif
 #include <stdio.h>
 
 #include "timing.h"

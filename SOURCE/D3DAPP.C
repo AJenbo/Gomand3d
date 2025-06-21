@@ -62,7 +62,11 @@ $Log:   H:/pvcs/pvcsproj/gomand3d.prj/D3DAPP.C_V  $
  */
 
 #include "d3dappi.h"
-#include "d3drm.h"  /* For D3DRM error codes only */
+#ifdef MINIWIN
+#include "miniwin/d3drm.h"
+#else
+#include <d3drm.h>  /* For D3DRM error codes only */
+#endif
 #include "rmfull.h"
 
 #include "wrapper.h"

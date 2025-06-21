@@ -27,9 +27,13 @@
 // ==================================================================
 //
 //*******************************************************************
+#ifdef MINIWIN
+#include "miniwin/windows.h"
+#else
 #include <windows.h>
 #include <windowsx.h>
 #include <mmsystem.h>
+#endif
 #include <mmddk.h>
 #include <malloc.h>
 

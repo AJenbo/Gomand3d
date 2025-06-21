@@ -103,7 +103,11 @@ $Log:   H:/pvcs/pvcsproj/gomand3d.prj/LANDSCAP.C_V  $
  ***************************************************************************/
 #include <math.h>
 #include <stdlib.h>
+#ifdef MINIWIN
+#include "miniwin/d3d.h"
+#else
 #include <d3d.h>
+#endif
 #include "d3dmacs.h"
 #include "rmdemo.h"
 #include "rmfull.h"

@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "BinLoad.h"
+#include "binload.h"
 #include "global.h"
 
 Handle BinaryHandleHead=NULL;

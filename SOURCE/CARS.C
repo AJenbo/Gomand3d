@@ -47,7 +47,11 @@ Changes:
 #include "camera.h"
 #include "imisc.h"
 #include "global.h"
+#ifdef MINIWIN
+#include "miniwin/d3d.h"
+#else
 #include <d3d.h>
+#endif
 #include "d3dmacs.h"
 #include "mdtex.h"
 

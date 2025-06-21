@@ -5,7 +5,12 @@
  *
  */
 
-#include        <windows.h>
+
+#ifdef MINIWIN
+#include "miniwin/windows.h"
+#else
+#include <windows.h>
+#endif
 #include        "lclib.h"
 
 

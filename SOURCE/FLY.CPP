@@ -287,8 +287,13 @@ $Log:   H:/pvcs/pvcsproj/gomand3d.prj/FLY.CPV  $
 
 #define INITGUID
 
-#include "d3drmwin.h"
+#ifdef MINIWIN
+#include "miniwin/d3drm.h"
+#include "miniwin/windows.h"
+#else
+#include <d3drmwin.h>
 #include <windows.h>
+#endif
 #include <stdio.h>
 #include <string.h>
 #include <malloc.h>

@@ -1,7 +1,11 @@
 // Test of PVCS
 
 #include <stdio.h>
-#include "d3drmwin.h"
+#ifdef MINIWIN
+#include "miniwin/d3drm.h"
+#else
+#include <d3drmwin.h>
+#endif
 #include "d3dapp.h"
 #include "mdtex.h"
 #include "wrapper.h"

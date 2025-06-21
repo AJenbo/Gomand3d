@@ -92,11 +92,19 @@ $Log:   H:/pvcs/pvcsproj/gomand3d.prj/IMISC.C_V  $
  * Implemented copy mode for 8-bit rendering.
 
 ***********************************************************************/
+#ifdef MINIWIN
+#include "miniwin/windows.h"
+#else
 #include <windows.h>
+#endif
 #include <stdio.h>
 
 
+#ifdef MINIWIN
+#include "miniwin/d3d.h"
+#else
 #include <d3d.h>
+#endif
 #include "d3dmacs.h"
 #include "mdtex.h"
 #include "rl2d3d.h"

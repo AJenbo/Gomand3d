@@ -1,6 +1,12 @@
+#ifdef MINIWIN
+#include "miniwin/d3d.h"
+#include "miniwin/direct.h"
+#include "miniwin/d3drm.h"
+#else
 #include <d3d.h>
 #include <direct.h>
 #include <d3drmwin.h>
+#endif
 #include "d3dmacs.h"
 
 void MultiplyMatrices(D3DRMMATRIX4D M1, D3DRMMATRIX4D M2, D3DRMMATRIX4D Result)

@@ -1,4 +1,8 @@
+#ifdef MINIWIN
+#include "miniwin/windows.h"
+#else
 #include <windows.h>
+#endif
 #include <stdio.h>
 #include <stdlib.h>
 #include <crtdbg.h>

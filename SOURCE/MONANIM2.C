@@ -62,9 +62,13 @@ Changes:
 #pragma warning( disable : 4244)
 #define BruceNotSpudde
 //#define BruceSndSystem
+#ifdef MINIWIN
+#include "miniwin/windows.h"
+#else
 #include <windows.h>
 #include <windowsx.h>
 #include <commctrl.h>
+#endif
 
 #ifndef __psx__
 #define XAFnotXBF

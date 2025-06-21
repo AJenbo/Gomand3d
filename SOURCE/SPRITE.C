@@ -79,18 +79,26 @@ $Log:   H:/pvcs/pvcsproj/gomand3d.prj/SPRITE.C_V  $
  * Implemented copy mode for 8-bit rendering.
  ***************************************************************************/
 #include "rl2d3d.h"
-#include "Global.h"
+#include "global.h"
 
 #include <math.h>
 #include <stdlib.h>
+#ifdef MINIWIN
+#include "miniwin/d3d.h"
+#else
 #include <d3d.h>
+#endif
 #include "d3dmacs.h"
 #include "rmdemo.h"
 #include "mdtex.h"
 
+#ifdef MINIWIN
+#include "miniwin/d3drm.h"
+#include "miniwin/windows.h"
+#else
 #include <d3drmwin.h>
-
 #include <windows.h>
+#endif
 #include <stdio.h>
 #include <string.h>
 #include <malloc.h>

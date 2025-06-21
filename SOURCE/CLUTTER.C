@@ -152,7 +152,11 @@ REVISION HISTORY        (Add Edits and History to top of list).
 #include "imisc.h"
 #include "camera.h"
 
+#ifdef MINIWIN
+#include "miniwin/d3d.h"
+#else
 #include <d3d.h>
+#endif
 #include "d3dmacs.h"
 #include "mdtex.h"
 #include "rl2d3d.h"

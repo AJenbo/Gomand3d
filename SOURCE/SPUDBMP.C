@@ -36,9 +36,13 @@ Changes:
 
 ***********************************************************************/
 
+#ifdef MINIWIN
+#include "miniwin/windows.h"
+#else
 #include <windows.h>
 #include <windowsx.h>
 #include <commctrl.h>
+#endif
 
 #include "rl2d3d.h"
 

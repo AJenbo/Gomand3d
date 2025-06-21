@@ -1,6 +1,10 @@
+#ifdef MINIWIN
+#include "miniwin/windows.h"
+#else
 #include <windows.h>
 #include <windowsx.h>
 #include <commctrl.h>
+#endif
 #include <memory.h>
 #include <mmreg.h>
 

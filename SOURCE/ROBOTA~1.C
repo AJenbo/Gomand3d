@@ -82,9 +82,13 @@ Changes:
 ***********************************************************************/
 #pragma warning( disable : 4244)
 
+#ifdef MINIWIN
+#include "miniwin/windows.h"
+#else
 #include <windows.h>
 #include <windowsx.h>
 #include <commctrl.h>
+#endif
 #include <stdio.h>
 #include "imisc.h"
 #include "clutter.h"
@@ -128,7 +132,7 @@ typedef enum
 #include "psystem.h"
 #include "Robotanim.h"
 
-#include "BinLoad.h"
+#include "binload.h"
 #include "ichars.h"
 #include "tekanim.h"
 

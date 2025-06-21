@@ -8,10 +8,14 @@
  *              playback with the midiStream* API under Win95.
  *
  ***************************************************************************/
+#ifdef MINIWIN
+#include "miniwin/windows.h"
+#else
 #include <windows.h>
 #include <windowsx.h>
-
 #include <mmsystem.h>
+#endif
+
 #include <assert.h>
 #include <stdio.h>
 

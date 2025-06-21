@@ -35,7 +35,11 @@ Changes:
 
 ***********************************************************************/
 
+#ifdef MINIWIN
+#include "miniwin/windows.h"
+#else
 #include <windows.h>
+#endif
 
 #include "rl2d3d.h"
 /*

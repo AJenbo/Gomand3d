@@ -438,9 +438,13 @@ $Log:   H:/pvcs/pvcsproj/gomand3d.prj/boink2.c_v  $
 #define BruceNotSpudde
 
 //#define Expressive
+#ifdef MINIWIN
+#include "miniwin/windows.h"
+#else
 #include <windows.h>
 #include <windowsx.h>
 #include <commctrl.h>
+#endif
 #include <stdio.h>
 #include <math.h>
 
